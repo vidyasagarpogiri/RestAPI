@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   def show
   end
 
+  # to get index of books
   def index
   @books = Book.all
   #raise @books.inspect
