@@ -5,7 +5,6 @@ class BooksController < ApplicationController
   # to get index of books
   def index
   @books = Book.all
-  #raise @books.inspect
   end
 
   def new
