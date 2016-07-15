@@ -12,15 +12,18 @@ class BooksController < ApplicationController
   end
 
   def create
-		@listing = current_user.listings.build(listing_params)
+    @book = Book.new(student_params)
 
-		if @listing.save
-		   Notification.job_notification(@listing).deliver_now
-			redirect_to @listing, notice: "Successfully created new Listing"
-		else
-			render 'new'
-		end
-	end
+    respond_to do |format|
+      if @book.save
+        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.json { render :show, status: :created, location: @book }
+      else
+        format.html { render :new }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def edit
   end
@@ -30,4 +33,14 @@ class BooksController < ApplicationController
 
   def destroy
   end
+  
+    private
+
+    def set_student
+      @book = Book.find(params[:id])
+    end
+
+    def book_params
+      params.require(:book).permit(:Title, :Author, :Price)
+    end
 end
