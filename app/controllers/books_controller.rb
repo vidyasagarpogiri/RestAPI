@@ -45,7 +45,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
-	#raise @book.inspect
+	raise @book.inspect
 	if @book.present?
     @book.destroy
     respond_to do |format|
