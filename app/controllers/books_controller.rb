@@ -10,6 +10,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   @books = Book.all
   end
 
+  # creates a new record
   def new
 	@book = Book.new
   end
