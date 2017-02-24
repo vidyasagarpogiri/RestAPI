@@ -57,7 +57,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
     format.json  { render :json => msg } # don't do msg.to_json
      end
   end
-  
+ 
     private
 
     def set_book
