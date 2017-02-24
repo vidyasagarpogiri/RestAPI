@@ -12,7 +12,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # creates a new record
   def new
-	@book = Book.new
+  @book = Book.new
   end
 
   def create
