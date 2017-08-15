@@ -1,3 +1,3 @@
 # book model
-class Book < ActiveRecord::Base
+class Book < ActiveRecord::Base        
 end
