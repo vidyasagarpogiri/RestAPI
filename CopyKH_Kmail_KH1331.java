@@ -104,61 +104,7 @@ public class CopyKH_Kmail_KH1331 {
 		f.click();
 		Verify.homepage(driver);
 	}
-	   /*****************************************************************
-		//@@Step  :To create new user
-			if (Datatable.getValue("CreateUser").equals("Yes")) {
-
-				//@Step :To load sheet and add new User
-				Datatable.loadDataSheet(dataFileName, "CreateUser");            
-				//@Step :To select the required menu
-				KH.Menu.TopMenu.select(driver, "File/New/User");
-				KH.User.AddNewUser.fillAddNewUser(driver);
-				KH.User.AddNewUser.validateAndCreateUser(driver);
-				KH.User.UserManager.completeUserSetup(driver);
-				KH.Roles.AddRoles.addBasicRolesToNewUser(driver);
-				ApplicationHeader.logout(driver);
-			}
-
-			else{
-
-				Assert.fail("Create User - Yes is not given in the data sheet");
-			}
-		
-			KH.User.UserLogin.submitCredentials(driver, GlobalData.getUserName(), GlobalData.getTemporaryPwd());
-			KH.User.UserLogin.updateProfile(driver);	
-			KH.User.UpdateProfile.updateUserProfile(driver);
-			Waits.forBrowserLoad(driver);
-		
-			
-			// Navigates to the default page i.e Hotbox 
-			Waits.forHomePage(driver);
-		    ApplicationHeader.logout(driver);
-			
-		    //Logging into the same user and verify that it is redirected to Kmail since there are unread emails for the user
-		    KH.User.UserLogin.submitCredentials(driver, GlobalData.getUserName(), Datatable.getValue("Password"));
-		    Waits.forPageWait(driver);
-		    Verify.exactPageTitle(driver, "K-Mail | Kinnser Software");
-		    
-		    //Selecting the unread mail & opening the email.
-		    KH.Kmail.Inbox.selectMailBySubject(driver, subject);
-		    Assert.assertTrue(true, "Unread Email is present in the KMail");
-		    KH.Kmail.Inbox.openMailBySubject(driver, subject);
-		    if(driver.getPageSource().contains(subject))
-	        {
-		    Verify.exactPageTitle(driver, "K-mail | Kinnser Software");
-		    Assert.assertTrue(true, "Email is read in the KMail");
-	        }
-		    KH.Menu.TopMenu.select(driver, "Go To/Inbox");
-		    Waits.forPageWait(driver);
-		    Verify.exactPageTitle(driver, "K-Mail | Kinnser Software");
-		    ApplicationHeader.logout(driver);
-		    
-		    //Logging into the same user and verify that it is redirected to default page since there are no unread emails for the user
-		    KH.User.UserLogin.submitCredentials(driver, GlobalData.getUserName(), Datatable.getValue("Password"));
-		    Verify.exactPageHeader(driver, "Hotbox");
-		    
-	}*/
-	
+	   
 	@AfterClass(alwaysRun = true)
   	public static void Teardown() {
   		components.Browser.teardownTest();
