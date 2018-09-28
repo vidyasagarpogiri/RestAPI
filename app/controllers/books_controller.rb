@@ -6,7 +6,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
                                   
   # to get index of books                     
-  def index                   
+  def index                      
   @books = Book.all
   end
 
@@ -27,7 +27,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
       end
     end
   end
- 
+      
   def edit
   end
 
@@ -47,7 +47,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   raise @book.inspect
 	if @book.present?
     @book.destroy
-    respond_to do |format|
+    respond_to do |format|    
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { render :json => @book.to_json, :status => :unprocessable_entity } 
     end
