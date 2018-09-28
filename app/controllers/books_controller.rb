@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 before_action :set_book, only: [:show, :edit, :update, :destroy]
     
-  # show the book details                
+  # show the book details                   
   def show             
   end
                                                        
