@@ -7,7 +7,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
                                                        
   # to get index of books                                     
   def index                      
-  @books = Book.all
+  @books = Book.all     
   end
 
   # creates a new record
@@ -39,7 +39,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
       else               
         format.html { render :edit }                                                                                   
         format.json { render json: @book.to_json, status: :unprocessable_entity }
-      end
+      end   
     end
   end
 
