@@ -29,7 +29,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
       
   def edit
-  end
+  end                     
 
   def update                                         
     respond_to do |format|                     
@@ -47,7 +47,7 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   raise @book.inspect
 	if @book.present?
     @book.destroy
-    respond_to do |format|    
+    respond_to do |format|         
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { render :json => @book.to_json, :status => :unprocessable_entity } 
     end
