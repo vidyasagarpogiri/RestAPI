@@ -6,12 +6,12 @@ before_action :set_book, only: [:show, :edit, :update, :destroy]
   end
                                                                           
   # to get index of books                                     
-  def index                                                             
+  def index                                                                     
   @books = Book.all             
   end
 
   # creates a new record
-  def new
+  def new                                            
   @book = Book.new
   end
    
